@@ -1,11 +1,7 @@
-//@flow
-
 import * as React from "react";
 
 import {cityList, inputField, currentCity} from "./store";
 import {addCity, deleteCity, changeInputField} from "./event";
-// import {getWeatherForCityFromList} from "./effectGetWeatherForCityFromList";
-// import {getWeatherForCurrentCity} from "./effectGetWeatherForCurrentCity";
 import { createEffectForCities } from "./createEffectForCities";
 
 import {Button} from "./component/Button";
@@ -20,7 +16,6 @@ export class App extends React.Component {
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
       getWeatherForCurrentCity(`${position.coords.latitude},${position.coords.longitude}`);
-      // getWeatherForCurrentCity(`${position.coords.latitude},${position.coords.longitude}`);
       });
   }
 
@@ -55,7 +50,6 @@ cityList
       }
 
       return Object.assign({}, item, forecastForCity.current);
-
     })
   });
 

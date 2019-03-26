@@ -7,7 +7,14 @@ export const CityList = createComponent(cityList, ({handleDeleteCity, getWeather
 
   return (
     <ul>
-      {cityList.map(city => <CityItem getWeatherForCityFromList={ getWeatherForCityFromList } onDeleteCity={ handleDeleteCity } key={city.name} city={ city }/>)}
+      {cityList.map(city =>
+        <CityItem
+          getWeatherForCityFromList={ getWeatherForCityFromList }
+          onDeleteCity={ handleDeleteCity }
+          key={city.name}
+          city={ city }
+        />
+        )}
     </ul>
   );
 });
